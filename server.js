@@ -25,11 +25,19 @@ var smtpTransport = nodemailer.createTransport({
 });
 
 app.post('/api/contact', function(req, res, next) {
+  var phoneNumber = req.body.phone;
+  var numberArray = [];
+  var numberMaker = function(num) {
+    numberArray.push(num.toString().slice(0,3));
+    numberArray.push(num.toString().slice(3,6));
+    numberArray.push(num.toString().slice(6,10));
+    return numberArray.join('-');
+  }
   smtpTransport.sendMail({
     from: `${YOUR_NAME} ${EMAIL_ACCOUNT_USER}`,
     to: 'jacobhamblin83@gmail.com',
     subject: 'Message from Portfolio Site',
-    text: `From: ${req.body.name} at ${req.body.email}. ${req.body.message}, and their phone number is ${req.body.number}`
+    text: `From: ${req.body.name} at ${req.body.email}. ${req.body.message}, and their phone number is ${numberMaker(phoneNumber)}`
   }, function(error, response) {
     if (error) {
       console.log(error);

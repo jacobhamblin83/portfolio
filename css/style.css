@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -243,7 +239,7 @@ section.success {
   background-image: url('../img/portfolio/map-image.png')
 }
 #portfolio .portfolio-item {
-  margin: 0 0 15px;
+  margin: 0 0 30px 0;
   right: 0;
 }
 #portfolio .portfolio-item .portfolio-link {
